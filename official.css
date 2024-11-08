@@ -1,0 +1,226 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 90px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+}
+
+.hamburger span {
+    height: 4px;
+    width: 100%;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span{
+  background-color: white;
+}
+
+/* Navigation links */
+#nav-links {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    background-color: #333;
+    width: 200px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.3s ease;
+    z-index: 1;
+}
+
+#nav-links li {
+    list-style: none;
+    margin: 20px 0;
+    text-align: center;
+}
+
+#nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Show menu when the class "show" is added */
+#nav-links.show {
+    right: 0;
+}
+
+/* Hamburger animation for closing */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* For larger screens, make nav horizontal */
+@media (min-width: 768px) {
+    #nav-links {
+        position: static;
+        background-color: transparent; /* Remove the black background */
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: auto; /* Remove full height for desktop view */
+    }
+
+    #nav-links li {
+        margin: 0 15px;
+    }
+
+    .hamburger {
+        display: none; /* Hide the hamburger on desktop */
+    }
+    
+    #nav-links li a{
+      color: black;
+      font-size: 1.2rem;
+}
+}
+
+
+.btn {
+  display: inline-block;
+  background-color: #ff4b4b;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #333;
+}
+
+
+
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for the main section */
+#bia-officials {
+    background-color: #f4f4f4;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Header styling */
+#bia-officials h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Container for officials */
+.officials {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Individual official styling */
+.official {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Image styling */
+.official img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Name styling */
+.official h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Post styling */
+.official .post {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Hover effects for each official's card */
+.official:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #d32f2f; /* Red background */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Initially hidden */
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#backToTop:hover {
+    background-color: #b71c1c; /* Darker red when hovered */
+}

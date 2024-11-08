@@ -1,0 +1,294 @@
+/* Header section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 90px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+}
+
+.hamburger span {
+    height: 4px;
+    width: 100%;
+    background-color: black;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span{
+  background-color: white;
+}
+
+
+
+
+/* Navigation links */
+#nav-links {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    background-color: #333;
+    width: 200px;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.3s ease;
+    z-index: 1;
+}
+
+#nav-links li {
+    list-style: none;
+    margin: 20px 0;
+    text-align: center;
+}
+
+#nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Show menu when the class "show" is added */
+#nav-links.show {
+    right: 0;
+}
+
+/* Hamburger animation for closing */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* For larger screens, make nav horizontal */
+@media (min-width: 768px) {
+    #nav-links {
+        position: static;
+        background-color: transparent; /* Remove the black background */
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: auto; /* Remove full height for desktop view */
+    }
+
+    #nav-links li {
+        margin: 0 15px;
+    }
+
+    .hamburger {
+        display: none; /* Hide the hamburger on desktop */
+    }
+    
+    #nav-links li a{
+      color: black;
+      font-size: 1.2rem;
+}
+}
+
+
+
+
+
+
+/* General Styles */
+#about {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #d32f2f; /* Red color for text */
+    border: 2px solid #d32f2f; /* Red border */
+    padding: 10px;
+    display: inline-block;
+}
+
+.mission-vision {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.mission, .vision {
+    width: 45%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    opacity: 0; /* Start as invisible */
+    transform: translateX(100px); /* Start from the right */
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.mission h3, .vision h3 {
+    font-size: 24px;
+    color: #d32f2f; /* Red color for headings */
+    margin-bottom: 15px;
+}
+
+.mission p, .vision p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Slide-in animations for the mission and vision sections */
+.mission.show {
+    transform: translateX(0); /* Slide in from the right */
+    opacity: 1; /* Make visible */
+}
+
+.vision.show {
+    transform: translateX(0); /* Slide in from the left */
+    opacity: 1; /* Make visible */
+}
+
+.mission-vision .vision {
+    transform: translateX(-100px); /* Start from the left */
+}
+
+/* Animation when scrolling */
+@keyframes slide-in-from-top {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-from-right {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-from-bottom {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-from-left {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply animation to the sections */
+.mission, .vision {
+    animation: slide-in-from-right 0.8s ease-out forwards; /* Default animation for right */
+}
+
+.mission-vision .mission {
+    animation: slide-in-from-left 0.8s ease-out forwards; /* Default animation for left */
+}
+
+/* Adjust for larger screens */
+@media screen and (max-width: 768px) {
+    .mission, .vision {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+/* Style for the Back to Top button */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #d32f2f; /* Red background */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Initially hidden */
+    cursor: pointer;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#backToTop:hover {
+    background-color: #b71c1c; /* Darker red when hovered */
+}
+
+
+.btn {
+  display: inline-block;
+  background-color: #ff4b4b;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #333;
+}

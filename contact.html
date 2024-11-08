@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="contact.css">
+ 
+  <script src="https://kit.fontawesome.com/da8951ba7b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo-container">
+        <img src="logo.png" alt="BIA Logo" class="logo">
+        <h1>Boma's Intellectual Academy</h1>
+    </div>
+    <nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-links">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="service.html" class="nav-link">Services</a></li>
+            <li><a href="#officials" class="nav-link">BIA's Officials</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="contactme" class="contactme">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          <h1 class="sub-title">Contact <span>Us</span></h1>
+   <p><i class="fa-solid fa-envelope"></i>bomasintellectualacademy@gmail.com</p>
+          <p> <i class="fa-solid fa-phone-volume"></i>+234 701 238 8184</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61567455850887"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/bomasintellectuals/profilecard/?igsh=MXdmYXQ5dWtmYzVlZA=="><i class="fa-brands fa-instagram"></i></a>
+          
+            <a href="https://www.tiktok.com/@bia_officialaccount?_t=8rDUoHbuBXT&_r=1"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://whatsapp.com/channel/0029VapGpso6rsR0bfCxIp2P"><i class="fa-brands fa-square-whatsapp"></i></a>
+          </div>
+          <a href="CERTIFICATE -  BOMA ACADEMY LIMITED .pdf" download class="btn btn2">View Certification</a>
+        </div>
+        <div class="contact-right">
+          <form>
+            <input type="text" name="Name" class="custom-placeholder" placeholder="Your Name" required>
+            <input type="text" name="Email" class="custom-placeholder" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" class="custom-placeholder" placeholder="Your Message"></textarea>
+            <button type="Submit" class="btn btn2">Submit</button>
+          </form>
+          <a href="index.html" class="btn btn2">Go back To Homepage</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
